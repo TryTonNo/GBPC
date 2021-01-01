@@ -1,17 +1,19 @@
 while True:
     proceeds = input('Введите выручку фирмы: ')
-    if len(proceeds.split('.')) == 2 or (len(proceeds.split('.')) == 1 and proceeds.isdigit()):
+    if proceeds.isdigit():
+        # Я знаю, что isdigit не пропустит число с плавающей точкой, но пилить функцию,
+        # если мы ее еще не проходили не считаю правильным.
         proceeds = round(float(proceeds), 2)
         break
     else:
-        print('Ошбика ввода. Выручка фирмы должна быть числом. Пожалуйста, повторите попытку ввода.')
+        print('Выручка фирмы должна быть числом. Пожалуйста, повторите попытку ввода.')
 while True:
     costs = input('Введите издержки фирмы: ')
-    if len(costs.split('.')) == 2 or (len(costs.split('.')) == 1 and costs.isdigit()):
+    if costs.isdigit():
         costs = round(float(costs), 2)
         break
     else:
-        print('Ошбика ввода. Издержки фирмы должны быть числом. Пожалуйста, повторите попытку ввода.')
+        print('Издержки фирмы должны быть числом. Пожалуйста, повторите попытку ввода.')
 
 if proceeds > costs:
     profit = proceeds - costs
@@ -19,7 +21,7 @@ if proceeds > costs:
           f'\nРентабельность прибыли составляет: {round(profit / proceeds, 2)} '
     while True:
         count_emp = input('Введите количество сотрудников: ')
-        if count_emp.isdigit() and len(count_emp.split('.')) == 1:
+        if count_emp.isdigit():
             rez += f'\nПрибыль на одного сотрудка составляет: {round(profit / int(count_emp), 2)}'
             break
         else:
