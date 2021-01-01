@@ -1,12 +1,30 @@
-a = 1
-b = 'a'
-c = 'z1'
-print(a, b, c)
+var_a = 1
+var_b = 'a'
+var_c = 'z1'
+rez = f'var_a = {var_a}\nvar_b = {var_b}\nvar_c = {var_c}'
+print(rez)
 
-a = input('Введите число: ')
-b = input('Ввидите число: ')
-c = input('Ввидите число: ')
-d = str(input('Ввидите строку: '))
-e = str(input('Ввидите строку: '))
+while True:
+    var_a = input('Введите число: ')
+    if var_a.isdigit():
+        break
+    else:
+        print('Вы ввели не число. Введите, пожалуйста, число.')
+while True:
+    var_b = input('Введите число: ')
+    if var_b.isdigit():
+        break
+    else:
+        print('Вы ввели не число. Введите, пожалуйста, число.')
+while True:
+    var_c = input('Введите число: ')
+    if var_c.isdigit():
+        break
+    else:
+        print('Вы ввели не число. Введите, пожалуйста, число.')
+var_d = input('Ввидите строку: ')
+var_e = input('Ввидите строку: ')
 
-print(a, '\n' + b, '\n' + c, '\n' + d, '\n' + e)
+rez = f'var_a = {var_a}\nvar_b = {var_b}\nvar_c = {var_c}\nvar_d = {var_d}\nvar_e = {var_e}'
+
+print(rez)
